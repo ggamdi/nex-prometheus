@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: node-exporter
+  namespace: monitoring
+  labels:
+    name: node-exporter
+spec:
+  selector:
+    matchLabels:
+      name: node-exporter
+  template:
+    metadata:
+      labels:
+        name: node-exporter
+        app: node-exporter
+      annotations:
+        prometheus.io/scrape: "true"
+    spec:
+      containers:
+        - image: prom/node-exporter
+          name: node-exporter
+          ports:
+            - containerPort: 9100
+              protocol: TCP
+              name: http
