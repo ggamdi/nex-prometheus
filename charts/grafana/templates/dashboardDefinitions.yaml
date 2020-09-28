@@ -392,7 +392,7 @@ items:
                                     "expr": "sum by (code) (code_resource:apiserver_request_total:rate5m{verb=\"read\", cluster=\"$cluster\"})",
                                     "format": "time_series",
                                     "intervalFactor": 2,
-                                    "legendFormat": "{{ code }}",
+                                    "legendFormat": "{{`{{`}} code {{`}}`}}",
                                     "refId": "A"
                                 }
                             ],
@@ -785,7 +785,7 @@ items:
                                     "expr": "sum by (code) (code_resource:apiserver_request_total:rate5m{verb=\"write\", cluster=\"$cluster\"})",
                                     "format": "time_series",
                                     "intervalFactor": 2,
-                                    "legendFormat": "{{ code }}",
+                                    "legendFormat": "{{`{{`}} code {{`}}`}}",
                                     "refId": "A"
                                 }
                             ],
