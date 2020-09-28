@@ -1076,7 +1076,7 @@ items:
                                     "expr": "sum(rate(workqueue_adds_total{job=\"apiserver\", instance=~\"$instance\", cluster=\"$cluster\"}[5m])) by (instance, name)",
                                     "format": "time_series",
                                     "intervalFactor": 2,
-                                    "legendFormat": "{{instance}} {{name}}",
+                                    "legendFormat": "{{'{{'}}instance{{'}}'}} {{'{{'}}name{{'}}'}}",
                                     "refId": "A"
                                 }
                             ],
@@ -1168,7 +1168,7 @@ items:
                                     "expr": "sum(rate(workqueue_depth{job=\"apiserver\", instance=~\"$instance\", cluster=\"$cluster\"}[5m])) by (instance, name)",
                                     "format": "time_series",
                                     "intervalFactor": 2,
-                                    "legendFormat": "{{instance}} {{name}}",
+                                    "legendFormat": "{{'{{'}}instance{{'}}'}} {{'{{'}}name{{'}}'}}",
                                     "refId": "A"
                                 }
                             ],
@@ -1260,7 +1260,7 @@ items:
                                     "expr": "histogram_quantile(0.99, sum(rate(workqueue_queue_duration_seconds_bucket{job=\"apiserver\", instance=~\"$instance\", cluster=\"$cluster\"}[5m])) by (instance, name, le))",
                                     "format": "time_series",
                                     "intervalFactor": 2,
-                                    "legendFormat": "{{instance}} {{name}}",
+                                    "legendFormat": "{{'{{'}}instance{{'}}'}} {{'{{'}}name{{'}}'}}",
                                     "refId": "A"
                                 }
                             ],
@@ -1365,7 +1365,7 @@ items:
                                     "expr": "process_resident_memory_bytes{job=\"apiserver\",instance=~\"$instance\", cluster=\"$cluster\"}",
                                     "format": "time_series",
                                     "intervalFactor": 2,
-                                    "legendFormat": "{{instance}}",
+                                    "legendFormat": "{{'{{'}}instance{{'}}'}}",
                                     "refId": "A"
                                 }
                             ],
