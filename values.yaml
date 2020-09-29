@@ -3,8 +3,5 @@ namespace: monitoring
 grafana:
   namespace: monitoring
 
-kube-state-metrics:
-  namespace: monitoring
-
 node-exporter:
   namespace: monitoring

@@ -1,4 +1,4 @@
-{{- if .Values.namespace !=monitoring -}}
+{{- if ne .Values.namespace "monitoring" -}}
 apiVersion: v1
 kind: Namespace
 metadata:
