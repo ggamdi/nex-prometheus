@@ -4,7 +4,7 @@ metadata:
   labels:
     name: node-exporter
   name: node-exporter
-  namespace: {{ .Values.namespace }}
+  namespace: {{ .Values.global.namespace }}
 spec:
   ports:
     - name: http

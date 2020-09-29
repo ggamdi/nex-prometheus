@@ -4,5 +4,5 @@ data:
 kind: Secret
 metadata:
   name: grafana-datasources
-  namespace: {{ .Values.namespace }}
+  namespace: {{ .Values.global.namespace }}
 type: Opaque
