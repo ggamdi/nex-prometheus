@@ -1,7 +1,1 @@
-namespace: &name monitoring
-
-grafana:
-  namespace: *name
-
-node-exporter:
-  namespace: *name
+namespace: monitoring

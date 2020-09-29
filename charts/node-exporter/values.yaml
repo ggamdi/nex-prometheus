@@ -1,1 +1,1 @@
-namespace: monitoring
+namespace: {{ .Values.namespace }}
