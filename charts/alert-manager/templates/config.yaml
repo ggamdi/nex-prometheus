@@ -9,7 +9,7 @@ data:
             #resolve_timeout: 10s
       slack_api_url: https://hooks.slack.com/services/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
     templates:
-    - '/etc/alertmanager/*.tmpl'
+    - '/etc/alertmanager-templates/*.tmpl'
     route:
       receiver: slack_demo
       group_by: ['alertname','cluster']
