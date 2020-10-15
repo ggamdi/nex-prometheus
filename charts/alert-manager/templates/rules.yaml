@@ -18,14 +18,14 @@ data:
           summary: High Memory Usage
   memory.rules: |
     groups:
-    - name: Memory
+    - name: NodeAlerts
       rules:
-      - alert: Memory
-        expr: node_memory_Active_bytes > 0
-        for: 5s
+      - alert: NodeCPUUsage
+        expr: (100 - (avg(irate(node_cpu{mode="idle"}[5m])) BY (instance) * 100)) > 75
+        for: 2m
         labels:
           severity: slack
         annotations:
-          summary: High Memory Usage on {{ $labels.instance }}
-          identifier: "{{ $labels.instance }}"
-          description: "{{ $labels.job }} Memory Usage: {{ $value }}"
+          description: '{{$labels.instance}}: CPU usage is above 75% (current value is:
+            {{ $value }})'
+          summary: '{{$labels.instance}}: High CPU usage detect
