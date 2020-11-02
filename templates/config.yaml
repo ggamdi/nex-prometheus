@@ -132,6 +132,7 @@ data:
         static_configs:
         - targets: ['kube-state-metrics.kube-system.svc.cluster.local:8080']
 
+{{- if .Values.pushgateway.enabled }}
       - job_name: 'pushgateway'
         kubernetes_sd_configs:
           - role: endpoints
@@ -139,6 +140,7 @@ data:
         - source_labels: [__meta_kubernetes_endpoints_name]
           regex: 'pushgateway'
           action: keep
+{{- end -}}
 
-#        static_configs:
-#        - targets: ['pushgateway.{{ .Values.global.namespace }}.svc.cluster.local:9091']
+{{/*       static_configs:*/}}
+{{/*        - targets: ['pushgateway.{{ .Values.global.namespace }}.svc.cluster.local:9091']*/}}

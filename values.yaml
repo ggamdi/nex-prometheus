@@ -1,2 +1,5 @@
 global:
   namespace: monitoring
+
+pushgateway:
+  enabled: false
