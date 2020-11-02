@@ -1,5 +1,11 @@
 global:
   namespace: monitoring
 
+
+grafana:
+  service:
+    type: NodePort
+    nodeport:
+
 pushgateway:
   enabled: false
